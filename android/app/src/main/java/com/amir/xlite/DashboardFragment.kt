@@ -32,7 +32,7 @@ class DashboardFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View {
         val v = inflater.inflate(R.layout.fragment_dashboard, container, false)
         root = v
-        v.findViewById<TextView>(R.id.channel).text = "کانال: @aassddhub  •  ارسال از طریق ابر، بدون مصرف حجم گوشی"
+        v.findViewById<TextView>(R.id.channel).text = "کانال خصوصی تلگرام  •  ارسال از طریق ابر، بدون مصرف حجم گوشی"
         val list = v.findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(requireContext())
         list.adapter = adapter
