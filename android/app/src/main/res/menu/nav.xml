@@ -1,0 +1,4 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_x" android:icon="@drawable/ic_x" android:title="ایکس" />
+    <item android:id="@+id/nav_dash" android:icon="@drawable/ic_dash" android:title="داشبورد" />
+</menu>
