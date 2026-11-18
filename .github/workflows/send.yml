@@ -1,0 +1,28 @@
+name: send
+run-name: send ${{ inputs.req_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Tweet URL
+        required: true
+      req_id:
+        description: Request id from the app
+        required: true
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -U yt-dlp requests
+      - run: python send_one.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          TWEET_URL: ${{ inputs.url }}
